@@ -22,7 +22,7 @@ def bad_response(response_tuple, headers):
     raw_code, start_response = response_tuple
     code, response_headers = get_args_start_response(raw_code, headers)
     start_response(code, response_headers)
-    response = 'Error {}' .format(raw_code)
+    response = '{}' .format(code)
     return [response.encode('utf-8')]
 
 
