@@ -1,5 +1,5 @@
-from requests import parse_environ
-from responses import get_response
+from wsgi_request import parse_environ
+from wsgi_response import get_response
 
 
 class App:
@@ -28,23 +28,4 @@ class App:
         response_tuple = self.get_view(request_headers, start_response)
         response = get_response(response_tuple, request_headers)
         return response
-
-
-app = App()
-
-
-@app.route('/', method=['GET', 'POST'])
-def index(headers):
-    return 'Home page'
-
-
-@app.route('/products/')
-def products(headers):
-    return 'Products'
-
-
-if __name__ == '__main__':
-    from wsgiref.simple_server import make_server
-    httpd = make_server('0.0.0.0', 8000, app)
-    httpd.serve_forever()
 
