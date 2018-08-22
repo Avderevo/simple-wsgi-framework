@@ -9,9 +9,9 @@ def index(headers):
     return 'Home page'
 
 
-@app.route('/products/')
-def products(headers):
-    return 'Products'
+@app.route('/product/')
+def product(headers):
+    return 'Product'
 
 
 if __name__ == '__main__':
