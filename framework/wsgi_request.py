@@ -22,8 +22,8 @@ def get_content(environ):
     content_type = environ.get('CONTENT_TYPE')
 
     if not content_type or len(str(content_type)) == 0:
-        return 'text/html'
-    else:
-        return content_type
+        content_type = 'text/html'
+    
+    return content_type
 
         
