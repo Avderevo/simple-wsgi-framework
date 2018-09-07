@@ -1,5 +1,4 @@
 
-
 def parse_environ(environ):
     request_headers = {}
     request_headers['CONTENT_TYPE'] = get_content(environ)
@@ -21,7 +20,7 @@ def parse_environ(environ):
 def get_content(environ):
     content_type = environ.get('CONTENT_TYPE')
 
-    if not content_type or len(str(content_type)) == 0:
+    if not content_type:
         content_type = 'text/html'
     
     return content_type
