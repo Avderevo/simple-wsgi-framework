@@ -1,4 +1,4 @@
-from wsgi_app import App
+from framework.wsgi_app import App
 
 
 app = App()
